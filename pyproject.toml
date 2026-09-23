@@ -1,0 +1,8 @@
+[tool.uv.workspace]
+members = ["packages/*"]
+
+[dependency-groups]
+dev = ["pytest", "ruff", "pyright"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
