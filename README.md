@@ -1,2 +1,4 @@
 # asset_screening
-Human-in-the-loop decision support system for asset screening
+
+Human-in-the-loop machine learning-driven decision support system
+for asset (currently, only ETFs) screening with Rust backtest engine

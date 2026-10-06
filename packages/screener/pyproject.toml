@@ -7,8 +7,12 @@ dependencies = [
     "duckdb>=1.5.5",
     "polars>=1.44.2",
     "yfinance>=1.7.0",
+    "backtest-engine",
 ]
 
 [build-system]
 requires = ["uv_build>=0.12.9,<0.13.0"]
 build-backend = "uv_build"
+  
+[tool.uv.sources]
+backtest-engine = { workspace = true }

@@ -7,6 +7,8 @@ OUT_TYPE = TypeVar("OUT_TYPE")
 
 
 class BaseModel(ABC, Generic[TRAIN_TYPE, FEAT_TYPE, OUT_TYPE]):
+    """Model ABC to abstract different machine learning models"""
+
     @abstractmethod
     def train(self, data: TRAIN_TYPE) -> None:
         pass

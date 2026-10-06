@@ -1,0 +1,13 @@
+[package]
+name = "backtest_engine"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+
+name = "backtest_engine"
+
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+pyo3 = "0.29"
