@@ -9,6 +9,10 @@ import polars as pl
 from .capabilities import ProviderCapabilities
 
 
+class UnavailableProviderError(Exception):
+    """No symbol could be served and every failure was temporary"""
+
+
 class SymbolErrorType(enum.Enum):
     TEMPORARY = enum.auto()
     PERMANENT = enum.auto()
@@ -31,7 +35,7 @@ class Payload:
     def __post_init__(self):
         if self.received_at.utcoffset() != timedelta(0):
             raise ValueError(
-                f"received_at must be an UTC datetime. Got {self.received_at!r}"
+                f"received_at must be a UTC datetime. Got {self.received_at!r}"
             )
 
 

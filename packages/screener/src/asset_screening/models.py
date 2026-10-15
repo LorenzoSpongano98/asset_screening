@@ -1,5 +1,5 @@
-from typing import Generic, TypeVar
 from abc import ABC, abstractmethod
+from typing import Generic, TypeVar
 
 TRAIN_TYPE = TypeVar("TRAIN_TYPE")
 FEAT_TYPE = TypeVar("FEAT_TYPE")

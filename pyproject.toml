@@ -2,7 +2,13 @@
 members = ["packages/*"]
 
 [dependency-groups]
-dev = ["pytest", "ruff", "pyright"]
+dev = [
+    "pytest",
+    "ruff",
+    "pyright",
+    "hypothesis>=6.168.5",
+    "pytest-cov>=7.1.0",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

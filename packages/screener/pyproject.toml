@@ -8,6 +8,8 @@ dependencies = [
     "polars>=1.44.2",
     "yfinance>=1.7.0",
     "backtest-engine",
+    "pandas>=3.0.6",
+    "pyarrow>=26.0.0",
 ]
 
 [build-system]

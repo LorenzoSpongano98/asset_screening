@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from datetime import date
 
 ISO_4217_PATTERN = re.compile(r"[A-Z]{3}")
-ISO_10383_PATTERN = re.compile(r"[A-Z9-0]{4}")
+ISO_10383_PATTERN = re.compile(r"[A-Z0-9]{4}")
 
 
 class AdjustmentMethod(enum.Flag):
