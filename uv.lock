@@ -13,7 +13,6 @@ resolution-markers = [
 [manifest]
 members = [
     "asset-screening",
-    "backtest-engine",
 ]
 
 [manifest.dependency-groups]
@@ -30,7 +29,6 @@ name = "asset-screening"
 version = "0.1.0"
 source = { editable = "packages/screener" }
 dependencies = [
-    { name = "backtest-engine" },
     { name = "duckdb" },
     { name = "pandas" },
     { name = "polars" },
@@ -40,17 +38,12 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "backtest-engine", editable = "packages/backtest" },
     { name = "duckdb", specifier = ">=1.5.5" },
     { name = "pandas", specifier = ">=3.0.6" },
     { name = "polars", specifier = ">=1.44.2" },
     { name = "pyarrow", specifier = ">=26.0.0" },
     { name = "yfinance", specifier = ">=1.7.0" },
 ]
-
-[[package]]
-name = "backtest-engine"
-source = { editable = "packages/backtest" }
 
 [[package]]
 name = "beautifulsoup4"
