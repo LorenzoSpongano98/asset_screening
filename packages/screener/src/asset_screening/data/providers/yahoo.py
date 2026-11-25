@@ -1,6 +1,6 @@
 import io
 import time
-from collections.abc import Sequence
+from collections.abc import Mapping, Sequence
 from datetime import UTC, date, datetime, timedelta
 
 import pandas as pd
@@ -17,6 +17,10 @@ from asset_screening.data.contracts import (
     SymbolErrorType,
     UnavailableProviderError,
 )
+from asset_screening.data.schemas import RawTableNames
+
+ADJ_CLOSE = "Adj Close"
+SYMBOL = "Symbol"
 
 
 class YahooFinanceProvider(DataProvider):
@@ -129,7 +133,9 @@ class YahooFinanceProvider(DataProvider):
         return FetchResult(payloads=tuple(payloads), symbol_errors=tuple(errors))
 
     def parse(self, payload: Payload) -> pl.DataFrame:
-        raise NotImplementedError("WIP, to be implemented soon.")
+        df = pl.DataFrame(pl.read_parquet(payload.content))
+        symbol = payload.request_parameters["symbol"]
+        return df.select(pl.lit(symbol).alias(SYMBOL), pl.all()).drop(ADJ_CLOSE)
 
-    def standardize(self, parsed: pl.DataFrame) -> pl.DataFrame:
+    def standardize(self, parsed: pl.DataFrame) -> Mapping[RawTableNames, pl.DataFrame]:
         raise NotImplementedError("WIP, to be implemented soon.")

@@ -7,6 +7,7 @@ from typing import Protocol
 import polars as pl
 
 from .capabilities import ProviderCapabilities
+from .schemas import RawTableNames
 
 
 class UnavailableProviderError(Exception):
@@ -73,7 +74,7 @@ class DataProvider(Protocol):
         # TODO: Update the docstring
         ...
 
-    def standardize(self, parsed: pl.DataFrame) -> pl.DataFrame:
+    def standardize(self, parsed: pl.DataFrame) -> Mapping[RawTableNames, pl.DataFrame]:
         # TODO: Update the docstring
         """Standardize raw data for consistent
         storage across different providers

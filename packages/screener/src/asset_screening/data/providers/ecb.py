@@ -1,1 +1,0 @@
-"""ECB euro reference rates."""

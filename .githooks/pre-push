@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e 
+
+if ! command -v just >/dev/null 2>&1; then
+  echo "pre-push: just not found. Install it"
+  exit 1
+fi
+
+echo "pre-push: just check"
+just check
+

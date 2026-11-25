@@ -106,3 +106,5 @@ instance/
 /data/
 mlruns/
 target/
+
+STATE.md 
